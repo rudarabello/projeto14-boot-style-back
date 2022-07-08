@@ -8,7 +8,7 @@ import { modelPassword } from "../models/modelPassword.js";
 export async function signup(req, res) {
     const { name, email, password, Cpassword } = req.body;
     const Vpassword = { password, Cpassword }
-    const { error } = modelPassword.validate(Vpassword);
+    const { value,error } = modelPassword.validate(Vpassword);
     if (error) {
         return res.status(406).send("Error on password validation");
     } else {

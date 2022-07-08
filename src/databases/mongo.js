@@ -11,7 +11,7 @@ const client = new MongoClient(MONGO_URI);
 
 client.connect();
 
-let db = client.db("bootStyle");
+let db = client.db("bootstyle");
 
 export { db, objectId };
 
