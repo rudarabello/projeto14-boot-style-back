@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import userRoutes from "./routers/userRouters.js"
 const app = express();
-const PORT = process.env.PORT || 5009;
+const PORT = process.env.PORT || 3000;
 
 dotenv.config();
 app.use(express.json());

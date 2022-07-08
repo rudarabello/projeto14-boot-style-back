@@ -5,8 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/App.js",
-    "dev": "node ./src/App.js",
+    "start": "node ./src/server.js",
+		"dev": "npx nodemon ./src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
