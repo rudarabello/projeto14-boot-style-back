@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "type": "module",
   "description": "",
-  "main": "index.js",
+  "main": "App.js",
   "scripts": {
-    "start": "node ./src/server.js",
-		"dev": "npx nodemon ./src/server.js",
+    "start": "node ./src/App.js",
+		"dev": "npx nodemon ./src/App.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
