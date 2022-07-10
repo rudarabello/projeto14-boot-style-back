@@ -1,8 +1,10 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import userRoutes from "./routers/userRouters.js"
-import productRoutes from "./routers/productRouters.js"
+import userRoutes from "./routers/userRouters.js";
+import productRoutes from "./routers/productRouters.js";
+import cartRoutes from "./routers/cartRouters.js";
+
 const app = express();
 const PORTA = process.env.PORT || 3001;
 
@@ -12,5 +14,6 @@ app.use(cors());
 
 app.use(userRoutes);
 app.use(productRoutes);
+app.use(cartRoutes);
 
 app.listen(PORTA);
