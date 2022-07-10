@@ -14,8 +14,10 @@ export async function AddToCart(req, res) {
 
 export async function GetCartItems(req, res) {
     const { user } = res.locals;
+    console.log(user);
     try {
         const itemsCart = await db.collection("cart").find({ userId: user._id }).toArray();
+        console.log(itemsCart)
         res.status(200).send(itemsCart);
     } catch (error) {
         res.sendStatus(500);
