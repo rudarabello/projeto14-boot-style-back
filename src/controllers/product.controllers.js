@@ -28,10 +28,9 @@ async function removeProduct(req, res) {
 }
 
 async function returnProducts(req, res) {
-    const { category } = req.headers;
-
+    const { category } = req.headers
     try {
-        const showProducts = await db.collection("products").find({ category: category }).toArray();
+        const showProducts = await db.collection("products").find({category: category}).toArray();
         res.status(200).send(showProducts);
     } catch (error) {
         return res.sendStatus(500);
