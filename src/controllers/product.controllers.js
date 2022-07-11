@@ -27,15 +27,6 @@ async function removeProduct(req, res) {
     }
 }
 
-async function returnProducts(req, res) {
-    const { category } = req.headers
-    try {
-        const showProducts = await db.collection("products").find({category: category}).toArray();
-        res.status(200).send(showProducts);
-    } catch (error) {
-        return res.sendStatus(500);
-    }
-}
 
 async function returnProduct(req, res) {
     const { id } = req.headers;
@@ -48,5 +39,24 @@ async function returnProduct(req, res) {
     }
 }
 
-export { addProduct, removeProduct, returnProduct, returnProducts };
+async function returnProducts(req, res) {
+    const { category } = req.headers
+    try {
+        const showProducts = await db.collection("products").find({category: category}).toArray();
+        res.status(200).send(showProducts);
+    } catch (error) {
+        return res.sendStatus(500);
+    }
+}
+
+async function returnAllProducts(req, res) {
+    try {
+        const showProducts = await db.collection("products").find({}).toArray();
+        res.status(200).send(showProducts);
+    } catch (error) {
+        return res.sendStatus(500);
+    }
+}
+
+export { addProduct, removeProduct, returnProduct, returnProducts, returnAllProducts };
 
